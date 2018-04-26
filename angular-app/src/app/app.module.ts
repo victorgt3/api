@@ -8,6 +8,7 @@ import { AlbumCreateComponent } from './album-create/album-create.component';
 import { PhotoCreateComponent } from './photo-create/photo-create.component';
 import {Routes,RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 const routes:Routes = [
   {path:'albums', component: AlbumListComponent},
@@ -23,8 +24,9 @@ const routes:Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule
+    RouterModule.forRoot(routes, {useHash: true}),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
